@@ -10,7 +10,7 @@ const DashboardTabs = () => {
       {tabs.map((tab) => (
         <Link key={tab.url} href={tab.url} className="flex gap-2 items-center p-2">
           {tab.icon}
-          <span>{tab.tab}</span>
+          <span className="hidden lg:block">{tab.tab}</span>
         </Link>
       ))}
     </nav>
