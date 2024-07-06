@@ -32,7 +32,8 @@ model Courses {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   courseName String
   tags       String[]
-  creator    String   @db.ObjectId
+  creator    String   @db.String
+  description String
   price      String
   lectures   String[]
 }

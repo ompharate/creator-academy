@@ -22,8 +22,8 @@ export default function RootLayout({
     <Suspense fallback={<Loader />}>
       <>
         <DashboardTabs />
-        {children}
-      </>
+          {children}
+        </>
     </Suspense>
   );
 }
