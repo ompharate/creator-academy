@@ -13,7 +13,7 @@ export async function createUser(userData: params) {
     const { userId, firstName, lastName, platformPic, email, platformName } =
       userData;
 
-    console.log(userData);
+  
 
     await prisma.user.create({
       data: {

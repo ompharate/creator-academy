@@ -50,7 +50,7 @@ export default function CourseCard({
       </CardContent>
       <CardFooter className="flex justify-end gap-2">
         <Button
-          onClick={() => router.push("/dashboard/courses/1234")}
+          onClick={() => router.push(`/dashboard/courses/${userId}/${id}`)}
           className="bg-[#2795cc]"
         >
           Configure

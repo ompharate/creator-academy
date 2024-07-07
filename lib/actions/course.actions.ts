@@ -1,6 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import prisma from "../prisma";
+import { redirect } from "next/navigation";
 
 // todo try catch is left
 export async function getCourses(userId: string) {
@@ -32,7 +33,6 @@ interface courseData {
 }
 export async function createCourse(courseData: courseData) {
   try {
-    console.log(courseData);
     const { courseName, coursePrice, creator, description } = courseData;
     const course = await prisma.courses.create({
       data: {
@@ -64,4 +64,28 @@ export async function deleteCourseDb(courseId: string, userId: string) {
     },
   });
   revalidatePath("/dashboard/courses");
+}
+interface updateCourseData {
+  courseId: string;
+  userId: string;
+  data: {
+    courseName: string;
+    price: string;
+    description: string;
+  };
+}
+
+export async function updateCourseDb(newCourseData: updateCourseData) {
+  const course = await prisma.courses.update({
+    where: {
+      id: newCourseData.courseId,
+      creator: newCourseData.userId,
+    },
+    data: {
+      courseName: newCourseData.data.courseName,
+      description: newCourseData.data.description,
+      price: newCourseData.data.price,
+    },
+  });
+  redirect("/dashboard/courses")
 }
