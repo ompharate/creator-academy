@@ -29,16 +29,19 @@ interface courseData {
   courseName: string;
   coursePrice: string;
   creator: string;
+  courseImg: string;
   description: string;
 }
 export async function createCourse(courseData: courseData) {
   try {
-    const { courseName, coursePrice, creator, description } = courseData;
+    const { courseName, coursePrice, creator, description, courseImg } =
+      courseData;
     const course = await prisma.courses.create({
       data: {
         courseName: courseName,
         price: coursePrice,
         creator: creator,
+        thambali: courseImg,
         description: description,
       },
     });
@@ -72,6 +75,7 @@ interface updateCourseData {
   data: {
     courseName: string;
     price: string;
+    courseImg:string,
     description: string;
   };
 }
@@ -86,7 +90,8 @@ export async function updateCourseDb(newCourseData: updateCourseData) {
       courseName: newCourseData.data.courseName,
       description: newCourseData.data.description,
       price: newCourseData.data.price,
+      thambali: newCourseData.data.courseImg,
     },
   });
-  redirect("/dashboard/courses")
+  redirect("/dashboard/courses");
 }

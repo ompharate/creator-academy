@@ -18,6 +18,7 @@ interface Course {
   courseName: string;
   creator: string;
   description: string;
+  thambali:string;
   price: string;
 }
 export default function CourseCard({
@@ -25,6 +26,7 @@ export default function CourseCard({
   userId,
   courseName,
   description,
+  thambali,
   price,
   creator,
 }: Course) {
@@ -45,7 +47,7 @@ export default function CourseCard({
         <img
           width={300}
           height={300}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzr3sO-Qc1MBDW4muEmRbepQ2YxXetc0rCNA&s"
+          src={thambali}
         />
       </CardContent>
       <CardFooter className="flex justify-end gap-2">

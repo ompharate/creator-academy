@@ -5,7 +5,7 @@ import DashboardTabs from "@/components/shared/DashboardTabs";
 import "../../globals.css";
 import { Suspense } from "react";
 import Loader from "@/components/shared/Loader";
-import "@uploadthing/react/styles.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {

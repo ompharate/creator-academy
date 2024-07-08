@@ -17,5 +17,5 @@ const DashboardTabs = () => {
   </div>
   );
 };
-
+  
 export default DashboardTabs;

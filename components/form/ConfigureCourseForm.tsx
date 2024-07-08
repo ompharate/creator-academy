@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { updateCourseDb } from "@/lib/actions/course.actions";
+import UploadButtonForm from "./UploadButtonForm";
 interface courseDetails {
   id: string;
   courseName: string;
@@ -30,6 +31,7 @@ const ConfigureCourseForm = ({
   const [courseDescription, setCourseDescription] = useState(
     courseDetails.description
   );
+  const [CourseImg, setCourseImg] = useState("");
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async () => {
@@ -42,6 +44,7 @@ const ConfigureCourseForm = ({
           courseName,
           price: coursePrice,
           description: courseDescription,
+          courseImg:CourseImg
         },
       };
       await updateCourseDb(newCourseData);
@@ -65,6 +68,10 @@ const ConfigureCourseForm = ({
             <CardDescription>configure your course</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
+            <div className="space-y-1">
+              <Label htmlFor="name">Thumbnail</Label>
+              <UploadButtonForm setCourseImg={setCourseImg} />
+            </div>
             <div className="space-y-1">
               <Label htmlFor="name">Course Name</Label>
               <Input
@@ -93,7 +100,9 @@ const ConfigureCourseForm = ({
             </div>
           </CardContent>
           <CardFooter>
-            <Button disabled={loading} onClick={onSubmit}>{loading ? "updating..." : "Save changes"}</Button>
+            <Button disabled={loading} onClick={onSubmit}>
+              {loading ? "updating..." : "Save changes"}
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>

@@ -16,20 +16,29 @@ import { newCourseValidation } from "@/lib/validations/course";
 import { createCourse } from "@/lib/actions/course.actions";
 import { useRouter } from "next/navigation";
 import UploadButtonForm from "./UploadButtonForm";
-const CreateCourseForm = ({ userId }: { userId: string }) => {
+interface props {
+  userId: string;
+  courseName: string;
+  coursePrice: string;
+  courseDesc: string;
+  courseImg:string,
+  setCourseName: React.Dispatch<React.SetStateAction<string>>;
+  setCoursePrice: React.Dispatch<React.SetStateAction<string>>;
+  setCourseDesc: React.Dispatch<React.SetStateAction<string>>;
+  setCourseImg: React.Dispatch<React.SetStateAction<string>>;
+}
+const CreateCourseForm = ({ propsData }: { propsData: props }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [courseName, setCourseName] = useState<string>("");
-  const [coursePrice, setCoursePrice] = useState<string>("");
-  const [courseDesc, setCourseDesc] = useState<string>("");
 
   const onSubmit = async () => {
     setLoading(true);
     const course = {
-      courseName,
-      coursePrice,
-      creator: userId,
-      description: courseDesc,
+      courseName: propsData.courseName,
+      creator: propsData.userId,
+      coursePrice:propsData.coursePrice,
+      description: propsData.courseDesc,
+      courseImg:propsData.courseImg
     };
     if (!course) return null;
     try {
@@ -42,7 +51,7 @@ const CreateCourseForm = ({ userId }: { userId: string }) => {
     setLoading(false);
   };
   return (
-    <Tabs defaultValue="account" className="max-w-7xl mx-auto mt-5  ">
+    <Tabs defaultValue="account" className="flex-grow">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="account">New Course</TabsTrigger>
         <TabsTrigger value="password">Add Lecture</TabsTrigger>
@@ -58,19 +67,19 @@ const CreateCourseForm = ({ userId }: { userId: string }) => {
           <CardContent className="space-y-2">
             <div className="space-y-1">
               <Label htmlFor="name">Course Thumbnail</Label>
-              <UploadButtonForm />  
+              <UploadButtonForm setCourseImg={propsData.setCourseImg} />
             </div>
             <div className="space-y-1">
               <Label htmlFor="name">Course Name</Label>
               <Input
-                onChange={(e) => setCourseName(e.target.value)}
+                onChange={(e) => propsData.setCourseName(e.target.value)}
                 id="name"
               />
             </div>
             <div className="space-y-1">
               <Label htmlFor="name">Course Price</Label>
               <Input
-                onChange={(e) => setCoursePrice(e.target.value)}
+                onChange={(e) => propsData.setCoursePrice(e.target.value)}
                 id="name"
               />
             </div>
@@ -80,7 +89,7 @@ const CreateCourseForm = ({ userId }: { userId: string }) => {
                 rows={8}
                 className="w-full rounded border border-slate-300 px-4 py-2"
                 id="username"
-                onChange={(e) => setCourseDesc(e.target.value)}
+                onChange={(e) => propsData.setCourseDesc(e.target.value)}
               />
             </div>
           </CardContent>

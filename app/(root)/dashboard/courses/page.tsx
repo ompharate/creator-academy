@@ -6,7 +6,8 @@ import React from "react";
 const Page = async () => {
   interface Course {
     id:string,
-    courseName: string;
+    courseName: string,
+    thambali:string,
     creator: string;
     description: string;
     price: string;
@@ -23,6 +24,7 @@ const Page = async () => {
           key={course.id}    
           id={course.id}     
           userId={user?.id} 
+          thambali={course.thambali}
           courseName={course.courseName}
           creator={course.creator}
           description={course.description}

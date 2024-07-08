@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { UploadDropzone } from "@/utils/uploadthing";
-const UploadButtonForm = () => {
+// import "@uploadthing/react/styles.css";
+const UploadButtonForm = ({
+  setCourseImg,
+}: {
+  setCourseImg: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <UploadDropzone
       appearance={{
@@ -15,14 +20,14 @@ const UploadButtonForm = () => {
           backgroundColor: "#f77272",
           color: "#fff",
         },
-        label:{
-          color:"black"
-        }
+        label: {
+          color: "black",
+        },
       }}
       endpoint="imageUploader"
       onClientUploadComplete={(res) => {
         console.log("Files: ", res);
-        alert("Upload Completed");
+        setCourseImg(res[0].url)
       }}
       onUploadError={(error: Error) => {
         alert(`ERROR! ${error.message}`);
