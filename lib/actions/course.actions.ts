@@ -55,6 +55,7 @@ export async function getCoursesLength(userId: string) {
       creator: userId,
     },
   });
+  return courses;
 }
 export async function deleteCourseDb(courseId: string, userId: string) {
   const course = await prisma.courses.delete({

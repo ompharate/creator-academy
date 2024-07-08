@@ -15,13 +15,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { newCourseValidation } from "@/lib/validations/course";
 import { createCourse } from "@/lib/actions/course.actions";
 import { useRouter } from "next/navigation";
+import UploadButtonForm from "./UploadButtonForm";
 const CreateCourseForm = ({ userId }: { userId: string }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [courseName, setCourseName] = useState<string>("");
   const [coursePrice, setCoursePrice] = useState<string>("");
   const [courseDesc, setCourseDesc] = useState<string>("");
-  
+
   const onSubmit = async () => {
     setLoading(true);
     const course = {
@@ -56,6 +57,10 @@ const CreateCourseForm = ({ userId }: { userId: string }) => {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
+              <Label htmlFor="name">Course Thumbnail</Label>
+              <UploadButtonForm />  
+            </div>
+            <div className="space-y-1">
               <Label htmlFor="name">Course Name</Label>
               <Input
                 onChange={(e) => setCourseName(e.target.value)}
@@ -80,8 +85,13 @@ const CreateCourseForm = ({ userId }: { userId: string }) => {
             </div>
           </CardContent>
           <CardFooter>
-            <Button disabled={loading} onClick={onSubmit} className="bg-[#2795cc]">
-              {loading ? "Creating..." : "Create"}             </Button>
+            <Button
+              disabled={loading}
+              onClick={onSubmit}
+              className="bg-[#2795cc]"
+            >
+              {loading ? "Creating..." : "Create"}{" "}
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>
