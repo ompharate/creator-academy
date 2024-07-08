@@ -75,7 +75,7 @@ interface updateCourseData {
   data: {
     courseName: string;
     price: string;
-    courseImg:string,
+    courseImg: string;
     description: string;
   };
 }
@@ -94,4 +94,40 @@ export async function updateCourseDb(newCourseData: updateCourseData) {
     },
   });
   redirect("/dashboard/courses");
+}
+
+export async function getCoursesNames(userId: string) {
+  const courses = await prisma.courses.findMany({
+    where: {
+      creator: userId,
+    },
+    select: {
+      courseName: true,
+      id: true,
+    },
+  });
+
+  return courses;
+}
+interface lecture {
+  lecture: string;
+  courseId: string;
+  creator: string;
+  topicName: string;
+}
+export async function createLecture(lectureData: lecture) {
+  try {
+    const lecture = await prisma.lectures.create({
+      data: {
+        topicDesc:"",
+        topicName:lectureData.topicName,
+        video: lectureData.lecture,
+        courseId: lectureData.courseId,
+        userId: lectureData.creator,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  redirect("/dashboard/courses")
 }

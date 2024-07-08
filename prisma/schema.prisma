@@ -13,7 +13,7 @@ datasource db {
 }
 
 model User {
-  id        String   @id  @map("_id") @db.String
+  id        String   @id @map("_id") @db.String
   username  String
   email     String   @unique
   onBoarded Boolean
@@ -29,19 +29,21 @@ model Company {
 }
 
 model Courses {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  courseName String
-  tags       String[]
-  thambali   String
-  creator    String   @db.String
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  courseName  String
+  tags        String[]
+  thambali    String
+  creator     String   @db.String
   description String
-  price      String
-  lectures   String[]
+  price       String
+  lectures    String[]
 }
 
 model lectures {
   id        String @id @default(auto()) @map("_id") @db.ObjectId
   topicName String
   topicDesc String
-  userId    String @db.ObjectId
+  courseId  String
+  video     String
+  userId    String @db.String
 }

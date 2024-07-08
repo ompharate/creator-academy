@@ -9,11 +9,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { newCourseValidation } from "@/lib/validations/course";
-import { createCourse } from "@/lib/actions/course.actions";
+import { createCourse, createLecture } from "@/lib/actions/course.actions";
 import { useRouter } from "next/navigation";
 import UploadButtonForm from "./UploadButtonForm";
 interface props {
@@ -21,7 +28,11 @@ interface props {
   courseName: string;
   coursePrice: string;
   courseDesc: string;
-  courseImg:string,
+  courseImg: string;
+  courses: {
+    id: string;
+    courseName: string;
+  }[];
   setCourseName: React.Dispatch<React.SetStateAction<string>>;
   setCoursePrice: React.Dispatch<React.SetStateAction<string>>;
   setCourseDesc: React.Dispatch<React.SetStateAction<string>>;
@@ -30,15 +41,18 @@ interface props {
 const CreateCourseForm = ({ propsData }: { propsData: props }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-
+  const [videoFile, setVideoFile] = useState("");
+  const [setSelectedCourse, setSetSelectedCourse] = useState("");
+  const [topicName, setTopicName] = useState("");
+  console.log("video file", videoFile);
   const onSubmit = async () => {
     setLoading(true);
     const course = {
       courseName: propsData.courseName,
       creator: propsData.userId,
-      coursePrice:propsData.coursePrice,
+      coursePrice: propsData.coursePrice,
       description: propsData.courseDesc,
-      courseImg:propsData.courseImg
+      courseImg: propsData.courseImg,
     };
     if (!course) return null;
     try {
@@ -50,6 +64,27 @@ const CreateCourseForm = ({ propsData }: { propsData: props }) => {
     }
     setLoading(false);
   };
+
+  const uploadLecture = async () => {
+    
+    try {
+      setLoading(true);
+      const lectureData = {
+        lecture: videoFile || "",
+        courseId: setSelectedCourse || "",
+        creator: propsData.userId || "",
+        topicName: topicName || "",
+      };      
+      console.log(lectureData)
+      if(!lectureData) return null;
+      await createLecture(lectureData);
+      } catch (error) {
+      console.log(error);
+    }finally{
+      setLoading(false);
+    }
+  };  
+
   return (
     <Tabs defaultValue="account" className="flex-grow">
       <TabsList className="grid w-full grid-cols-2">
@@ -115,15 +150,31 @@ const CreateCourseForm = ({ propsData }: { propsData: props }) => {
           <CardContent className="space-y-2">
             <div className="space-y-1">
               <Label htmlFor="current">Topic Name</Label>
-              <Input id="current" type="password" />
+              <Input onChange={(e) => setTopicName(e.target.value)} id="current" placeholder="Enter topic name" type="text" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="new">Pic</Label>
-              <Input id="new" type="password" />
+              <Select onValueChange={(value)=>setSetSelectedCourse(value)}>
+                <SelectTrigger >
+                  <SelectValue placeholder="Select the course" />
+                </SelectTrigger>
+                <SelectContent>
+                  {propsData.courses.map((course) => (
+                    <SelectItem value={course.id}>
+                      {course.courseName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="current">Choose video</Label>
+              <UploadButtonForm setCourseImg={setVideoFile} />
             </div>
           </CardContent>
           <CardFooter>
-            <Button className="bg-[#2795cc]">Upload</Button>
+            <Button disabled={loading} onClick={uploadLecture} className="bg-[#2795cc]">
+              {loading ? "Uploading..." : "Upload"}
+            </Button>
           </CardFooter>
         </Card>
       </TabsContent>
