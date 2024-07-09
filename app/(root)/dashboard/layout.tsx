@@ -20,10 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <Suspense fallback={<Loader />}>
-      <>
+      <div className="bg-[#0C1844]">
         <DashboardTabs />
           {children}
-        </>
+        </div>
     </Suspense>
   );
 }

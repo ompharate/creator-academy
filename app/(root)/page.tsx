@@ -4,12 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  
   return (
-    <main>
+    <main className="bg-[#0C1844]">
       <Header />
       {/* <UserButton/> */}
-      <div className="max-w-7xl mx-auto rounded-2xl  block justify-center items-center gap-10 py-10 px-12 bg-gradient-to-r from-[#d56d76] via-pink-600 to-red-500 lg:flex lg:px-0">
+      <div className="  block justify-center items-center gap-10 py-10 px-12 bg-gradient-to-r from-[#FF6969] via-pink-600 to-[#C80036] lg:flex lg:px-0">
         <div>
           <h1 className="head-text mb-4 text-white">
             Go Digital with creatorAcademy.
@@ -26,21 +25,21 @@ export default function Home() {
           alt="home-1"
         />
       </div>
-     
+
       <section className="py-16">
-        <h2 className="text-heading3-bold font-bold text-center mb-12">
+        <h2 className="text-heading3-bold font-bold text-center mb-12 text-white">
           Features
         </h2>
         <div className=" flex justify-center container mx-auto ">
           <div className="flex flex-col items-center">
             <div className="w-full md:w-1/2  mb-8 ">
-              <div className="p-6 bg-[#2795cc] rounded-lg shadow-lg text-white">
+              <div className="p-6 bg-white rounded-lg  text-black  shadow-md shadow-[#FFF5E1] ">
                 <h3 className="text-xl font-bold mb-4">Easy Course Creation</h3>
                 <p>Create courses using our intuitive tools.</p>
               </div>
             </div>
             <div className="w-full md:w-1/2  mb-8">
-              <div className="p-6 bg-red-400 rounded-lg shadow-lg text-white">
+              <div className="p-6 bg-[#FF6969] rounded-lg shadow-lg text-white shadow-md shadow-[#FF6969]">
                 <h3 className="text-xl font-bold mb-4">
                   Customizable Templates
                 </h3>
@@ -58,13 +57,13 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <div className="w-full md:w-1/2  mb-8">
-              <div className="p-6 bg-[#2795cc] rounded-lg shadow-lg text-white">
+              <div className="p-6 bg-white rounded-lg text-black shadow-md shadow-[#FFF5E1]">
                 <h3 className="text-xl font-bold mb-4">Multi-Media Support</h3>
                 <p>Incorporate videos, quizzes, PDFs, and more.</p>
               </div>
             </div>
             <div className="w-full md:w-1/2   mb-8">
-              <div className="p-6 bg-red-400 rounded-lg shadow-lg text-white">
+              <div className="p-6 bg-[#FF6969] rounded-lg text-white shadow-md shadow-[#FF6969]">
                 <h3 className="text-xl font-bold mb-4">
                   Analytics and Insights
                 </h3>
@@ -75,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#2795cc]">
+      <section className="py-16 ">
         <div className="container mx-auto px-6 lg:px-20">
           <h2 className="text-heading3-bold font-bold text-center mb-12 text-white">
             Testimonials
@@ -143,17 +142,22 @@ export default function Home() {
 
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-20 ">
-          <h2 className="text-heading3-bold text-3xl font-bold text-center mb-12">
+          <h2 className="text-heading3-bold text-3xl font-bold text-center mb-12 text-white">
             Pricing Plans
           </h2>
-          <div className="shadow-lg shadow-gray-300 mx-10 px-6 py-6 flex items-center justify-between bg-red-400 rounded-lg text-white ">
+          <div className="shadow-lg shadow-[#FF6969] mx-10 px-6 py-6 flex items-center justify-between bg-[#FF6969] rounded-lg text-white ">
             <div>
               <h3 className="text-xl font-bold mb-4">Free Plan</h3>
               <p>$0/month</p>
               <p>Basic features to get started.</p>
             </div>
-            <div >
-              <Link  className="bg-[#2795cc] p-2 rounded-lg text-white font-semibold" href={"/sign-in"}>Gets Started</Link>
+            <div>
+              <Link
+                className="bg-[#C80036] p-2 rounded-lg text-white font-semibold hover:bg-[#FF6969]"
+                href={"/sign-in"}
+              >
+                Gets Started
+              </Link>
             </div>
           </div>
         </div>

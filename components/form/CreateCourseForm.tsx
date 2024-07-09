@@ -132,7 +132,7 @@ const CreateCourseForm = ({ propsData }: { propsData: props }) => {
             <Button
               disabled={loading}
               onClick={onSubmit}
-              className="bg-[#2795cc]"
+              className="bg-[#0C1844]"
             >
               {loading ? "Creating..." : "Create"}{" "}
             </Button>
@@ -172,7 +172,7 @@ const CreateCourseForm = ({ propsData }: { propsData: props }) => {
             </div>
           </CardContent>
           <CardFooter>
-            <Button disabled={loading} onClick={uploadLecture} className="bg-[#2795cc]">
+            <Button disabled={loading} onClick={uploadLecture} className="bg-[#0C1844]">
               {loading ? "Uploading..." : "Upload"}
             </Button>
           </CardFooter>

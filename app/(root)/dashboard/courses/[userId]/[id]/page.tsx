@@ -9,8 +9,10 @@ const page = async ({ params }: { params: params }) => {
   const courseDetails = await getCourse(params?.id, params?.userId);
   if (!courseDetails) return null;
   return (
-    <div className="max-w-7xl mx-auto flex justify-center mt-5">
-      <ConfigureCourseForm courseDetails={courseDetails} />
+    <div className="bg-[#0C1844] ">
+      <div className="max-w-7xl mx-auto flex justify-center mt-5 ] ">
+        <ConfigureCourseForm courseDetails={courseDetails} />
+      </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { IoCopy } from "react-icons/io5";
 export default function UserPlatform({slug}:{slug:string}) {
   return (
-    <div className="max-w-7xl mx-auto mt-5">
+    <div className="max-w-7xl mx-auto mt-5 rounded-md bg-[#FFF5E1]">
       <Card className="w-full">
         <CardHeader>
           <CardTitle>{slug}</CardTitle>
@@ -46,8 +46,8 @@ export default function UserPlatform({slug}:{slug:string}) {
        
         </CardContent>
         <CardFooter className="flex justify-end gap-2">
-          <Button variant="destructive">UnDeploy</Button>
-          <Button>Deploy</Button>
+          <Button className="bg-[#0C1844]">UnDeploy</Button>
+          <Button className="bg-[#C80036] hover:bg-[#FF6969 ]">Deploy</Button>
         </CardFooter>
       </Card>
     </div>

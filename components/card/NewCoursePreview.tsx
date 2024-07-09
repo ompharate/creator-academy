@@ -10,7 +10,7 @@ interface props {
 const NewCoursePreview = ({ propsData }: { propsData: props }) => {
   return (
     <div className="w-full lg:w-[20%]">
-      <div className="border border-gray-400 rounded-lg shadow-md shadow-gray-400">
+      <div className="bg-white border border-gray-400 rounded-lg shadow-md shadow-gray-400">
         <img
           src={
             propsData.courseImg

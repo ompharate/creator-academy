@@ -100,7 +100,7 @@ const ConfigureCourseForm = ({
             </div>
           </CardContent>
           <CardFooter>
-            <Button disabled={loading} onClick={onSubmit}>
+            <Button className="bg-[#0C1844]" disabled={loading} onClick={onSubmit}>
               {loading ? "updating..." : "Save changes"}
             </Button>
           </CardFooter>

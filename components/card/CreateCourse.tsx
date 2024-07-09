@@ -15,7 +15,7 @@ const CreateCourse = ({
   const [courseDesc, setCourseDesc] = useState<string>("");
   const [courseImg, setCourseImg] = useState<string>("");
   return (
-    <div className="flex flex-col gap-20 items-center max-w-[80%] mx-auto mt-5 lg:flex lg:flex-row lg:items-start lg:justify-around">
+    <div className="flex flex-col gap-20 items-center  max-w-[80%] mx-auto mt-5  lg:flex lg:flex-row lg:items-start lg:justify-around">
       <CreateCourseForm
         propsData={{
           userId,

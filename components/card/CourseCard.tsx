@@ -53,11 +53,11 @@ export default function CourseCard({
       <CardFooter className="flex justify-end gap-2">
         <Button
           onClick={() => router.push(`/dashboard/courses/${userId}/${id}`)}
-          className="bg-[#2795cc]"
+          className="bg-[#0C1844]"
         >
           Configure
         </Button>
-        <Button disabled={loading} onClick={deleteCourse} variant="destructive">
+        <Button className="bg-[#C80036]" disabled={loading} onClick={deleteCourse} variant="destructive">
           {loading ? "Deleting..." : "Delete"}
         </Button>
       </CardFooter>

@@ -44,11 +44,11 @@ const invoices = [
 
 export default function UsersTable() {
   return (
-    <div className="max-w-7xl mx-auto mt-5">
-      <Table>
+    <div className="max-w-7xl mx-auto mt-5 ">
+      <Table className="text-white">
         <TableCaption>Recent Course History</TableCaption>
         <TableHeader>
-          <TableRow>
+          <TableRow className="text-white">
             <TableHead className="w-[100px]">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>

@@ -12,12 +12,13 @@ const Page = async () => {
   const user = await currentUser();
   if(!user) return null;
   const userCompany = await getCompony(user.id);
+
   if(!userCompany) return null;
   const coursesLength = await getCoursesLength(user.id);  
-  // console.log(coursesLength);
-  if(!coursesLength) return null;
+;
+
   return (
-    <div>
+    <div className="bg-[#0C1844]">
       {/* <DashboardTabs /> */}
       <UserPlatform  slug={userCompany.slug} />
       <DashboardCard courseLength={coursesLength}/>
