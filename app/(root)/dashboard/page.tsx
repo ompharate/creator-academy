@@ -7,7 +7,6 @@ import { currentUser } from "@clerk/nextjs/server";
 import React from "react";
 
 
-
 const Page = async () => {
   const user = await currentUser();
   if(!user) return null;
@@ -15,12 +14,13 @@ const Page = async () => {
 
   if(!userCompany) return null;
   const coursesLength = await getCoursesLength(user.id);  
-;
+
+  console.log("hellow")
 
   return (
     <div className="bg-[#0C1844]">
       {/* <DashboardTabs /> */}
-      <UserPlatform  slug={userCompany.slug} />
+      <UserPlatform id={userCompany.id}  slug={userCompany.slug} />
       <DashboardCard courseLength={coursesLength}/>
       <UsersTable />
     </div>

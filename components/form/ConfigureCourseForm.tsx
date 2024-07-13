@@ -20,6 +20,8 @@ interface courseDetails {
   creator: string;
   description: string;
   price: string;
+  thambali:string;  
+  
 }
 const ConfigureCourseForm = ({
   courseDetails,
@@ -31,7 +33,7 @@ const ConfigureCourseForm = ({
   const [courseDescription, setCourseDescription] = useState(
     courseDetails.description
   );
-  const [CourseImg, setCourseImg] = useState("");
+  const [CourseImg, setCourseImg] = useState(courseDetails.thambali);
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async () => {
