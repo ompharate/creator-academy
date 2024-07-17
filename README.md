@@ -118,6 +118,6 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ## 📞 Contact
 
-Om Pharate - ompharate.tech - ompharate31@gmail.com
+Om Pharate - https://ompharate.tech - ompharate31@gmail.com
 
 Project Link: https://github.com/ompharate/creator-academy.git
