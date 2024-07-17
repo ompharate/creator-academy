@@ -1,9 +1,42 @@
-import React from 'react'
+import React from "react";
 
-const ModernCourses = () => {
-  return (
-    <div>Courses</div>
-  )
+interface courses {
+  id: string;
+  courseName: string;
+  tags: string[];
+  thambali: string;
+  creator: string;
+  description: string;
+  price: string;
+  lectures: string[];
 }
 
-export default ModernCourses
+const ModernCourses = ({
+  creator,
+  courses,
+}: {
+  creator: string;
+  courses: courses[];
+}) => {
+  return (
+    <div className="flex max-w-6xl flex-wrap gap-4 mx-auto my-4">
+      {courses.map((course) => (
+        <div className="bg-gray-300 rounded-md  max-w-[300px]">
+          <img className="h-[200px] w-[300px]" src={course.thambali} />
+          <div className="px-2 py-2 h-28">
+            <h2 className="text-heading4-medium">{course.courseName}</h2>
+            <p className="text-body-regular">{course.description}</p>
+            <p className="text-small-regular"> {creator}</p>
+          </div>
+          <div className="px-2 py-2">
+            <button className="bg-primary-500 w-full rounded-md py-2 px-2 text-white text-small-medium hover:shadow-md">
+              ₹ {course.price}
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ModernCourses;

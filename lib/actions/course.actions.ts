@@ -4,7 +4,7 @@ import prisma from "../prisma";
 import { redirect } from "next/navigation";
 
 // todo try catch is left
-export async function getCourses(userId: string) {
+export async function getCourses(userId: string | undefined) {
   const courses = await prisma.courses.findMany({
     where: {
       creator: userId,
