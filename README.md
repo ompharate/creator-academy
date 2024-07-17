@@ -1,4 +1,3 @@
-
 # 🎓 Creator Academy
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/cDDN8T9/logo-only.png" alt="logo-only" border="0"></a>
@@ -57,38 +56,50 @@ Make sure you have the following installed:
 ### 🔧 Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/creator-academy.git
+   git clone https://github.com/ompharate/creator-academy.git
+
+   ```
 
 2. Navigate to the project directory:
-    ```bash
-    cd creator-academy
+
+   ```bash
+   cd creator-academy
+
+   ```
 
 3. Install the dependencies:
-    ```bash
-    npm install
+   ```bash
+   npm install
+   ```
 4. Set up environment variables:
-    Create a .env file in the root directory and add the following:
-    env
-    ```bash
-    DATABASE_URL="your_mongodb_connection_string"
-    RAZORPAY_KEY_ID="your_razorpay_key_id"
-    RAZORPAY_KEY_SECRET="your_razorpay_key_secret"
-    CLERK_FRONTEND_API="your_clerk_frontend_api"
-    CLERK_API_KEY="your_clerk_api_key"
-    CLOUDINARY_URL="your_cloudinary_url"
-    UPLOADTHING_API_KEY="your_uploadthing_api_key"
-
- 5. Start the development server:
-    bash```
-    npm run dev
+   Create a .env file in the root directory and add the following:
+   env
+   ```bash
+   DATABASE_URL=
+   CLERK_ENCRYPTION_KEY=12345678
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
+   UPLOADTHING_SECRET=
+   UPLOADTHING_APP_ID=
+   
+5. Start the development server:
+   bash```
+   npm run dev
 
 This will start the application on http://localhost:3000.
 
- ## ⚠️ Note
-  **Note: This project is not deployed yet. The project will be developed when it is sufficiently complete.**
+## ⚠️ Note
+
+**Note: This project is not deployed yet. The project will be deployed when it is sufficiently complete.**
 
 ## 🤝 Contributing
+
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 Fork the Project
@@ -96,11 +107,13 @@ Create your Feature Branch (git checkout -b feature/AmazingFeature)
 Commit your Changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
+
 ## 📜 License
+
 Distributed under the MIT License. See LICENSE for more information.
 
 ## 📞 Contact
+
 Om Pharate - ompharate.tech - ompharate31@gmail.com
 
 Project Link: https://github.com/ompharate/creator-academy.git
-
