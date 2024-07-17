@@ -76,6 +76,7 @@ Make sure you have the following installed:
 4. Set up environment variables:
    Create a .env file in the root directory and add the following:
    env
+
    ```bash
    DATABASE_URL=
    CLERK_ENCRYPTION_KEY=12345678
@@ -87,16 +88,19 @@ Make sure you have the following installed:
    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
    UPLOADTHING_SECRET=
    UPLOADTHING_APP_ID=
-   
+
+   ```
+
 5. Start the development server:
-   bash```
+   ```bash
    npm run dev
+   ```
 
 This will start the application on http://localhost:3000.
 
 ## ⚠️ Note
 
-**Note: This project is not deployed yet. The project will be deployed when it is sufficiently complete.**
+**Note: This project is not been deployed yet. The project will be deployed when it is sufficiently complete..**
 
 ## 🤝 Contributing
 
