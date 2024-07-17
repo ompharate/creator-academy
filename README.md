@@ -1,5 +1,5 @@
 # 🎓 Creator Academy
-
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/cDDN8T9/logo-only.png" alt="logo-only" border="0"></a>
 Creator Academy is a platform that enables creators to create and manage courses easily. This open-source project is designed to help creators share their knowledge with the world. 
 
 ## 📋 Table of Contents
