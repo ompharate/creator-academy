@@ -9,7 +9,7 @@ interface companyInt {
   id: string;
 }
 const ultraModern = ({ companyData }: { companyData: companyInt }) => {
-  console.log("the data is:", companyData);
+
   return <div>ultraModern</div>;
 };
 

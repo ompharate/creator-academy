@@ -75,7 +75,7 @@ const CreateCourseForm = ({ propsData }: { propsData: props }) => {
         creator: propsData.userId || "",
         topicName: topicName || "",
       };      
-      console.log(lectureData)
+     
       if(!lectureData) return null;
       await createLecture(lectureData);
       } catch (error) {

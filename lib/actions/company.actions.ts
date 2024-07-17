@@ -1,10 +1,9 @@
 "use server";
 import prisma from "../prisma";
-export async function getCompany(platform: string) {
-  console.log("platform name is:", platform);
+export async function getCompany(params: string) {
   const companyData = await prisma.company.findFirst({
     where: {
-      companyName: platform,
+      companyName: params,
     },
     include: {
       user: true,

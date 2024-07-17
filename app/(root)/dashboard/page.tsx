@@ -15,7 +15,7 @@ const Page = async () => {
   if(!userCompany) return null;
   const coursesLength = await getCoursesLength(user.id);  
 
-  console.log("hellow")
+ 
 
   return (
     <div className="bg-[#0C1844]">
