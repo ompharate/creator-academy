@@ -64,10 +64,10 @@ Make sure you have the following installed:
     ```bash
     cd creator-academy
 
-3.Install the dependencies:
+3. Install the dependencies:
     ```bash
     npm install
-4.Set up environment variables:
+4. Set up environment variables:
     Create a .env file in the root directory and add the following:
     env
     ```bash
@@ -79,14 +79,14 @@ Make sure you have the following installed:
     CLOUDINARY_URL="your_cloudinary_url"
     UPLOADTHING_API_KEY="your_uploadthing_api_key"
 
- 5.Start the development server:
+ 5. Start the development server:
     bash```
     npm run dev
 
 This will start the application on http://localhost:3000.
 
  ## ⚠️ Note
-This project is not deployed yet. The project will be deployed when it is sufficiently complete.
+  **Note: This project is not deployed yet. The project will be developed when it is sufficiently complete.**
 
 ## 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
@@ -103,4 +103,4 @@ Distributed under the MIT License. See LICENSE for more information.
 Om Pharate - ompharate.tech - ompharate31@gmail.com
 
 Project Link: https://github.com/ompharate/creator-academy.git
-**Note: This project is not deployed yet. The project will be developed when it is sufficiently complete.**
+
