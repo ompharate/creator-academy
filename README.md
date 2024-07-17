@@ -20,7 +20,7 @@ Creator Academy is a platform that enables creators to create and manage courses
 - 🛡️ User Authentication with Clerk
 - 📝 Course Creation and Management
 - 🎨 Theme Selection for Course Pages
-- 💳 Payment Integration with Razorpay
+- 💳 Payment Integration with Stripe
 - 📱 Responsive Design
 - ☁️ Image and Video Management with Cloudinary
 - 📤 File Uploading with UploadThing
@@ -28,13 +28,12 @@ Creator Academy is a platform that enables creators to create and manage courses
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js, ShadCN, Tailwind CSS
-- **Backend:** Node.js, Express.js, Prisma
+- **Backend:** Next.js, Prisma
 - **Database:** MongoDB (via MongoDB Atlas)
 - **Validation:** Zod
 - **User Authentication:** Clerk
-- **Payment Gateway:** Razorpay
+- **Payment Gateway:** Stripe
 - **File Uploading:** UploadThing
-- **Media Management:** Cloudinary
 - **Language:** TypeScript
 
 ## 🚀 Getting Started
@@ -48,9 +47,8 @@ Make sure you have the following installed:
 - Node.js
 - npm (or yarn)
 - MongoDB (or a MongoDB Atlas account)
-- Razorpay account (for payment integration)
+- Stripe account (for payment integration)(currently optional)
 - Clerk account (for authentication)
-- Cloudinary account (for media management)
 - UploadThing account (for file uploading)
 
 ### 🔧 Installation
