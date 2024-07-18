@@ -4,7 +4,7 @@
 
 Creator Academy is a platform that enables creators to create and manage courses easily. This open-source project is designed to help creators share their knowledge with the world.
 
-[!Demo](https://utfs.io/f/69eb4ca4-8f6d-4b7c-b1b8-fa08f88b32db-f1lhsm.mp4)
+[Watch Demo Video ](https://utfs.io/f/69eb4ca4-8f6d-4b7c-b1b8-fa08f88b32db-f1lhsm.mp4)
 
 ## 📋 Table of Contents
 
