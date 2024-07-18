@@ -1,4 +1,6 @@
 import React from "react";
+import UltraModernNavbar from "./Navbar";
+import HomeCard from "../modern/HomeCard";
 
 interface companyInt {
   companyName: string;
@@ -10,8 +12,10 @@ interface companyInt {
 }
 const ultraModern = ({ companyData }: { companyData: companyInt }) => {
 
-  return <div>ultraModern</div>;
+  return <div>
+    <UltraModernNavbar companyName={companyData.companyName} companyImg={companyData.companyPic} />
+    <HomeCard companyName={companyData.companyName} />
+  </div>;
 };
 
 export default ultraModern;
-    

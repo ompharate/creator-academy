@@ -33,6 +33,12 @@ export default function UserPlatform({
   const makeSiteLive = async () => {
     await updateCompany(id, theme);
   };
+
+  const onSelectChange = (val: string) => {
+    console.log(val)
+    setTheme(val);
+  };
+
   return (
     <div className="max-w-7xl mx-auto mt-5 rounded-md bg-[#FFF5E1]">
       <Card className="w-full">
@@ -65,9 +71,9 @@ export default function UserPlatform({
                 </Button>
               </div>
               <Label htmlFor="name">Theme</Label>
-              <Select>
+              <Select onValueChange={(val)=>onSelectChange(val)}>
                 <SelectTrigger className="w-full">
-                  <SelectValue defaultValue={"modern"} placeholder="modern" />
+                  <SelectValue  placeholder="modern" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="modern">modern</SelectItem>

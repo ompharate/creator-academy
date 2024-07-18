@@ -23,9 +23,9 @@ const ModernCourses = ({
       {courses.map((course) => (
         <div className="bg-gray-300 rounded-md  max-w-[300px]">
           <img className="h-[200px] w-[300px]" src={course.thambali} />
-          <div className="px-2 py-2 h-28">
+          <div className="px-2 py-2 min-h-28 h-28">
             <h2 className="text-heading4-medium">{course.courseName}</h2>
-            <p className="text-body-regular">{course.description}</p>
+            <p className="text-body-regular">{course.description.substring(0,30)}...</p>
             <p className="text-small-regular"> {creator}</p>
           </div>
           <div className="px-2 py-2">
