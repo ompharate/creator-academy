@@ -11,7 +11,6 @@ interface companyInt {
   id: string;
 }
 const ultraModern = ({ companyData }: { companyData: companyInt }) => {
-
   return <div>
     <UltraModernNavbar companyName={companyData.companyName} companyImg={companyData.companyPic} />
     <HomeCard companyName={companyData.companyName} />

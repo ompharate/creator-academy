@@ -5,7 +5,7 @@ interface params {
   id: string;
   userId: string;
 }
-const page = async ({ params }: { params: params }) => {
+const Page = async ({ params }: { params: params }) => {
   const courseDetails = await getCourse(params?.id, params?.userId);
   if (!courseDetails) return null;
   return (
@@ -16,4 +16,4 @@ const page = async ({ params }: { params: params }) => {
     </div>
   );
 };
-export default page;
+export default Page;

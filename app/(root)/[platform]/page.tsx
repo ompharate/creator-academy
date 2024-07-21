@@ -3,7 +3,7 @@ import ultraModern from "@/components/themes/ultramodern/Home";
 import { getCompany } from "@/lib/actions/company.actions";
 import React from "react";
 
-const page = async ({ params }: { params: { platform: string } }) => {
+const Page = async ({ params }: { params: { platform: string } }) => {
   type ThemeKeys = "modern" | "ultraModern";
   const themes = {
     modern: ModernHome,
@@ -27,4 +27,4 @@ const page = async ({ params }: { params: { platform: string } }) => {
   return <ThemeComponent companyData={companyData} />;
 };
 
-export default page;
+export default Page;

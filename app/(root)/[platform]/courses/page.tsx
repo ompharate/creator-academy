@@ -6,7 +6,7 @@ import { getCompany } from "@/lib/actions/company.actions";
 import { getCourses } from "@/lib/actions/course.actions";
 import React from "react";
 
-const page = async ({ params }: { params: { platform: string } }) => {
+const Page = async ({ params }: { params: { platform: string } }) => {
   const companyData = await getCompany(params.platform);
   const courses = await getCourses(companyData?.userId);
 
@@ -31,4 +31,4 @@ const page = async ({ params }: { params: { platform: string } }) => {
   );
 };
 
-export default page;
+export default Page;
