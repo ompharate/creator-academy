@@ -8,7 +8,7 @@ Creator Academy is a platform that enables creators to create and manage courses
 
 ## 📋 Table of Contents
 
-- [Features](#features)
+- [Features](#Features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
@@ -100,21 +100,21 @@ This will start the application on http://localhost:3000.
 
 ## ⚠️ Note
 
-**Note: This project is not been deployed yet. The project will be deployed when it is sufficiently complete..**
+
 
 ## 🤝 Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 Fork the Project
 Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
+Commit your changes (git commit -m 'Add some AmazingFeature')
 Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 
 ## 📜 License
 
-Distributed under the MIT License. See LICENSE for more information.
+It is distributed under the MIT License. See LICENSE for more information.
 
 ## 📞 Contact
 
