@@ -8,7 +8,7 @@ Creator Academy is a platform that enables creators to create and manage courses
 
 ## 📋 Table of Contents
 
-- [Features](#Features)
+- [Features](#-features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
